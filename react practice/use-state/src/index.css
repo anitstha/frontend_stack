@@ -1,0 +1,48 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,body{
+  height: 100%;
+  width: 100%;
+  background-color: rgb(24, 22, 22);
+  color: white;
+}
+
+.main{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.main h1{
+  font-size: 10vw;
+}
+
+.btn{
+  display: flex;
+  gap: 10px;
+}
+
+button{
+  padding: 20px 40px;
+  font-size: 2vw;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+
+}
+
+button:hover{
+  background-color: rgb(181, 6, 6);
+  transform: translateY(-10px);
+  transition: all 0.3s;
+}
