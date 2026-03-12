@@ -1,0 +1,84 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Suman Shrestha",
+      "username": "Suman123",
+      "email": "suman.shrestha@gmail.com",
+      "phone": "980-123-4567",
+      "website": "sumannepal.com"
+    },
+    {
+      "id": 2,
+      "name": "Anita Gurung",
+      "username": "AnitaG",
+      "email": "anita.gurung@yahoo.com",
+      "phone": "981-234-5678",
+      "website": "anitagurung.com"
+    },
+    {
+      "id": 3,
+      "name": "Ramesh Karki",
+      "username": "RameshK",
+      "email": "ramesh.karki@nepalmail.com",
+      "phone": "982-345-6789",
+      "website": "rameshkarki.net"
+    },
+    {
+      "id": 4,
+      "name": "Sita Lama",
+      "username": "SitaL",
+      "email": "sita.lama@gmail.com",
+      "phone": "984-456-7890",
+      "website": "sitalama.com"
+    },
+    {
+      "id": 5,
+      "name": "Bibek Thapa",
+      "username": "BibekT",
+      "email": "bibek.thapa@gmail.com",
+      "phone": "985-567-8901",
+      "website": "bibekthapa.com"
+    },
+    {
+      "id": 6,
+      "name": "Pooja Rai",
+      "username": "PoojaR",
+      "email": "pooja.rai@nepalmail.com",
+      "phone": "986-678-9012",
+      "website": "poojarai.com"
+    },
+    {
+      "id": 7,
+      "name": "Kiran Magar",
+      "username": "KiranM",
+      "email": "kiran.magar@gmail.com",
+      "phone": "987-789-0123",
+      "website": "kiranmagar.net"
+    },
+    {
+      "id": 8,
+      "name": "Deepa Bhattarai",
+      "username": "DeepaB",
+      "email": "deepa.bhattarai@gmail.com",
+      "phone": "988-890-1234",
+      "website": "deepabhattarai.com"
+    },
+    {
+      "id": 9,
+      "name": "Sujan KC",
+      "username": "SujanKC",
+      "email": "sujan.kc@nepalmail.com",
+      "phone": "989-901-2345",
+      "website": "sujankc.com"
+    },
+    {
+      "id": 10,
+      "name": "Maya Shahi",
+      "username": "MayaS",
+      "email": "maya.shahi@gmail.com",
+      "phone": "980-012-3456",
+      "website": "mayshahi.com"
+    }
+  ]
+}
