@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const App = () => {
+const SearchByName = () => {
   const [data, setData] = useState([]);
   const [records, setRecords] = useState(data);
 
@@ -70,4 +70,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default SearchByName;
