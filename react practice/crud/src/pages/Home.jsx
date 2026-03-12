@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 const Home = () => {
@@ -19,7 +20,10 @@ const Home = () => {
         </h1>
       </u>
 
-      <div className="w-2/3 rounded bg-white shadow p-4 justify-center">
+      <div className="rounded bg-white shadow p-4">
+        <div className="flex w-fit bg-green-600 hover:bg-green-700 transition-all font-bold text-white text-sm py-1 px-2 mb-2 rounded">
+          <Link to="/create">Add User +</Link>
+        </div>
         <table className="w-full">
           <thead className="bg-blue-700 text-white text-left">
             <tr>
@@ -27,7 +31,6 @@ const Home = () => {
               <th className="py-1 px-2">Name</th>
               <th className="py-1 px-2">Email</th>
               <th className="py-1 px-2">Phone</th>
-              <th className="py-1 px-2">Website</th>
               <th className="py-1 px-2">Action</th>
             </tr>
           </thead>
@@ -42,12 +45,14 @@ const Home = () => {
                 <td className="py-1 px-2">{elem.name}</td>
                 <td className="py-1 px-2">{elem.email}</td>
                 <td className="py-1 px-2">{elem.phone}</td>
-                <td className="py-1 px-2">{elem.website}</td>
                 <td className="py-1 px-2">
-                  <button className="bg-green-600 text-white py-1 px-4 mr-2 cursor-pointer hover:bg-green-700 transition-all">
+                  <Link to={`/read/${elem.id}`} className="font-semibold bg-blue-400 text-white py-1 px-4 mr-2 cursor-pointer hover:bg-blue-500 transition-all">
+                    Read
+                  </Link>
+                  <button className="font-semibold bg-green-400 text-white py-1 px-4 mr-2 cursor-pointer hover:bg-green-500 transition-all">
                     Edit
                   </button>
-                  <button className="bg-red-600 text-white py-1 px-4 cursor-pointer hover:bg-red-700 transition-all">
+                  <button className="font-semibold bg-red-400 text-white py-1 px-4 cursor-pointer hover:bg-red-500 transition-all">
                     Delete
                   </button>
                 </td>

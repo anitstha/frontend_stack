@@ -1,84 +1,83 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Suman Shrestha",
-      "username": "Suman123",
       "email": "suman.shrestha@gmail.com",
-      "phone": "980-123-4567",
-      "website": "sumannepal.com"
+      "phone": "980-123-4567"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Anita Gurung",
-      "username": "AnitaG",
       "email": "anita.gurung@yahoo.com",
-      "phone": "981-234-5678",
-      "website": "anitagurung.com"
+      "phone": "981-234-5678"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Ramesh Karki",
-      "username": "RameshK",
       "email": "ramesh.karki@nepalmail.com",
-      "phone": "982-345-6789",
-      "website": "rameshkarki.net"
+      "phone": "982-345-6789"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Sita Lama",
-      "username": "SitaL",
       "email": "sita.lama@gmail.com",
-      "phone": "984-456-7890",
-      "website": "sitalama.com"
+      "phone": "984-456-7890"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Bibek Thapa",
-      "username": "BibekT",
       "email": "bibek.thapa@gmail.com",
-      "phone": "985-567-8901",
-      "website": "bibekthapa.com"
+      "phone": "985-567-8901"
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Pooja Rai",
-      "username": "PoojaR",
       "email": "pooja.rai@nepalmail.com",
-      "phone": "986-678-9012",
-      "website": "poojarai.com"
+      "phone": "986-678-9012"
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Kiran Magar",
-      "username": "KiranM",
       "email": "kiran.magar@gmail.com",
-      "phone": "987-789-0123",
-      "website": "kiranmagar.net"
+      "phone": "987-789-0123"
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "Deepa Bhattarai",
-      "username": "DeepaB",
       "email": "deepa.bhattarai@gmail.com",
-      "phone": "988-890-1234",
-      "website": "deepabhattarai.com"
+      "phone": "988-890-1234"
     },
     {
-      "id": 9,
+      "id": "9",
       "name": "Sujan KC",
-      "username": "SujanKC",
       "email": "sujan.kc@nepalmail.com",
-      "phone": "989-901-2345",
-      "website": "sujankc.com"
+      "phone": "989-901-2345"
     },
     {
-      "id": 10,
+      "id": "10",
       "name": "Maya Shahi",
-      "username": "MayaS",
       "email": "maya.shahi@gmail.com",
-      "phone": "980-012-3456",
-      "website": "mayshahi.com"
+      "phone": "980-012-3456"
+    },
+    {
+      "id": "1bc2",
+      "name": "Anit Shrestha",
+      "email": "anitshrestha10@gmail.com",
+      "phone": "9803057499"
+    },
+    {
+      "id": "27d4",
+      "name": "fdf",
+      "email": "df@fd.h",
+      "phone": "333"
+    },
+    {
+      "id": "75ac",
+      "name": "osdf",
+      "email": "fd@df.ggg",
+      "phone": "333"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
