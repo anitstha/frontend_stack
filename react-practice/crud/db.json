@@ -59,24 +59,6 @@
       "name": "Maya Shahi",
       "email": "maya.shahi@gmail.com",
       "phone": "980-012-3456"
-    },
-    {
-      "id": "1bc2",
-      "name": "Anit Shrestha",
-      "email": "anitshrestha10@gmail.com",
-      "phone": "9803057499"
-    },
-    {
-      "id": "27d4",
-      "name": "fdf",
-      "email": "df@fd.h",
-      "phone": "333"
-    },
-    {
-      "id": "75ac",
-      "name": "osdf",
-      "email": "fd@df.ggg",
-      "phone": "333"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
