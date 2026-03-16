@@ -1,29 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Navigate } from "react-router-dom";
+import { useAuth } from "../context/useAuth";
 
 const ProtectedRoute = ({ children }) => {
-  const [isAuthenticated, setIsAuthenticated] = useState(null); // null = loading
+  const { token, loading } = useAuth();
 
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (token) {
-      setIsAuthenticated(true); // user is logged in
-    } else {
-      setIsAuthenticated(false); // not logged in
-    }
-  }, []);
-
-  // While checking token, show nothing or a loader
-  if (isAuthenticated === null) {
-    return <div>Loading...</div>;
+  if (loading) {
+    return <div className="text-center mt-20 text-white">Loading...</div>;
   }
 
-  // If not authenticated, redirect to login
-  if (!isAuthenticated) {
+  if (!token) {
     return <Navigate to="/" replace />;
   }
 
-  // Authenticated → render children
   return children;
 };
 

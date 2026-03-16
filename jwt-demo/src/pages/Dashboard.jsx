@@ -1,11 +1,14 @@
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getCurrentUser } from "../api/auth";
-import { useEffect, useState } from "react";
-import { LogOut, LayoutDashboard, User, Settings } from "lucide-react"; // Optional: lucide-react for icons
+import { LogOut, LayoutDashboard, User } from "lucide-react";
+import { useAuth } from "../context/useAuth";
 
 const Dashboard = () => {
   const [userData, setUserData] = useState(null);
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
+  const { logout } = useAuth();
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -14,6 +17,8 @@ const Dashboard = () => {
         setUserData(data);
       } catch (error) {
         console.error(error);
+      } finally {
+        setLoading(false);
       }
     };
     fetchUser();
@@ -21,7 +26,7 @@ const Dashboard = () => {
 
   const handleLogout = () => {
     if (window.confirm("Are you sure you want to logout?")) {
-      localStorage.removeItem("token");
+      logout();
       navigate("/");
     }
   };
@@ -38,15 +43,17 @@ const Dashboard = () => {
             <span>Pulse</span>
           </div>
 
-          {userData && (
+          {loading ? (
+            <div className="text-slate-400 text-sm">Loading...</div>
+          ) : (
             <div className="flex items-center gap-4 group cursor-pointer p-1 pr-4 rounded-full bg-white/5 hover:bg-white/10 transition-all border border-white/5">
               <img
-                src={userData.image}
-                alt={userData.firstName}
+                src={userData?.image || "https://via.placeholder.com/150"}
+                alt={userData?.firstName || "User"}
                 className="w-8 h-8 rounded-full object-cover border border-indigo-500/50"
               />
               <span className="text-sm font-medium hidden sm:block">
-                {userData.firstName} {userData.lastName}
+                {userData?.firstName} {userData?.lastName}
               </span>
             </div>
           )}
@@ -55,20 +62,19 @@ const Dashboard = () => {
 
       {/* Main Content */}
       <main className="pt-32 pb-12 px-6 max-w-5xl mx-auto">
-        {/* Welcome Header */}
         <header className="mb-12">
           <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-2">
-            Welcome back, <span className="text-indigo-500">{userData?.firstName || 'User'}</span>!
+            {loading ? "Loading..." : <>Welcome back, <span className="text-indigo-500">{userData?.firstName || "User"}</span>!</>}
           </h1>
           <p className="text-slate-400 text-lg">Here's what's happening with your account today.</p>
         </header>
 
-        {/* Stats Grid Example */}
+        {/* Stats Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           {[
-            { label: 'Activity', value: 'Active', color: 'bg-emerald-500/10 text-emerald-500' },
-            { label: 'Role', value: 'Administrator', color: 'bg-indigo-500/10 text-indigo-500' },
-            { label: 'Status', value: 'Verified', color: 'bg-amber-500/10 text-amber-500' },
+            { label: "Activity", value: "Active", color: "bg-emerald-500/10 text-emerald-500" },
+            { label: "Role", value: "Administrator", color: "bg-indigo-500/10 text-indigo-500" },
+            { label: "Status", value: "Verified", color: "bg-amber-500/10 text-amber-500" },
           ].map((stat, i) => (
             <div key={i} className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
               <p className="text-sm text-slate-400 mb-1">{stat.label}</p>
@@ -79,7 +85,7 @@ const Dashboard = () => {
           ))}
         </div>
 
-        {/* Action Section */}
+        {/* Logout Section */}
         <div className="flex flex-col items-center justify-center p-12 rounded-3xl bg-gradient-to-b from-white/5 to-transparent border border-white/10">
           <div className="w-16 h-16 bg-white/5 rounded-full flex items-center justify-center mb-6">
             <User className="text-indigo-400" size={32} />
