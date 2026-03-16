@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Create axios instance
 const api = axios.create({
-  baseURL: "https://dummyjson.com", // replace with your API if needed
+  baseURL: "http://91.108.111.41:8082/api", // replace with your API if needed
 });
 
 // Request interceptor - attach token

@@ -12,7 +12,7 @@ const Login = () => {
     e.preventDefault();
     try {
       // Replace with your API endpoint
-      const res = await api.post("/auth/login", credentials); 
+      const res = await api.post("/auth/sup-admin/login", credentials); 
       login(res.data.token); // save token in AuthContext
       navigate("/dashboard");
     } catch (error) {
