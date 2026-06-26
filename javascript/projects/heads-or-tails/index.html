@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heads or Tails Game</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            background-color: #121214;
+            color: #f3f4f6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #guess {
+            font-size: 16vw;
+            font-weight: 700;
+            letter-spacing: -2px;
+            /* Added a subtle gradient to the text outcome for a modern touch */
+            background: linear-gradient(135deg, #ffffff 0%, #a1a1aa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .button {
+            position: absolute;
+            bottom: 12%;
+        }
+
+        #toss-btn {
+            background-color: #27272a;
+            color: #ffffff;
+            border: 1px solid #3f3f46;
+            border-radius: 9999px;
+            padding: 14px 32px;
+            font-size: 18px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        #toss-btn:hover {
+            background-color: #3f3f46;
+            border-color: #52525b;
+        }
+
+        #toss-btn:active {
+            transform: scale(0.96);
+            background-color: #18181b;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1><span id="guess">?</span></h1>
+
+    <div class="button">
+        <button id="toss-btn">Toss the Coin</button>
+    </div>
+
+    <script>
+        const guess = document.getElementById("guess");
+        const button = document.getElementById("toss-btn");
+
+        const result = ["Head", "Tail"];
+
+        button.addEventListener("click", () => {
+            // Generates 0 or 1 correctly using the fixed Math.random() function
+            const randomOutput = Math.floor(Math.random() * result.length);
+
+            // Updates the text inside the <span> element
+            guess.textContent = result[randomOutput];
+        });
+    </script>
+</body>
+
+</html>

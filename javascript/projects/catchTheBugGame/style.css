@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+}
+
+.game-info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* Turns the 9 divs into a 3x3 square grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.hole {
+    width: 100px;
+    height: 100px;
+    background-color: #bbbbbb;
+    border-radius: 50%;
+    /* Makes them circles */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    transition: background 0.1s ease;
+}
+
+/* When JS adds the 'bug' class, this styling kicks in */
+.hole.bug {
+    background-color: #ff4d4d;
+}
+
+.hole.bug::after {
+    content: "🐞";
+    /* The bug emoji appears */
+}

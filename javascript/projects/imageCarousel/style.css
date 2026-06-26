@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+main {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+img {
+    height: 400px;
+    width: 300px;
+    object-fit: cover;
+    object-position: center;
+    border: 10px solid rgb(76, 156, 0);
+    border-radius: 20px;    
+}
+
+#actions {
+    display: flex;
+    gap: 20px;
+}
+
+.btn {
+    padding: 20px;
+    border: 1px solid rgb(73, 73, 73);
+    border-radius: 10px;
+    background-color: green;
+    color: white;
+    cursor: pointer;
+}
+
+.btn:active {
+    scale: 0.98;
+    background-color: rgb(1, 112, 1);
+}
