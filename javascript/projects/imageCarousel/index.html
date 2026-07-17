@@ -4,18 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Carousel</title>
+    <title>Sliding Carousel</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <main>
-        <button id="prev-btn" class="btn">⏮</button>
-        <img id="carousel-img" src="" alt="Carousel Image">
-        <button id="next-btn" class="btn">⏭</button>
-    </main>
+    <div class="carousel-window">
+        <div class="carousel-track" id="carousel-track">
+        </div>
+    </div>
 
+    <div class="controls">
+        <button id="prev-btn">‹ Previous</button>
+        <button id="next-btn">Next ›</button>
+    </div>
 
     <script src="script.js"></script>
 </body>

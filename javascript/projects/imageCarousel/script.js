@@ -1,43 +1,49 @@
+// 1. image array
 const images = [
-    "https://images.pexels.com/photos/28739438/pexels-photo-28739438.jpeg", //dog
-    "https://images.pexels.com/photos/30189401/pexels-photo-30189401.jpeg", //cat
-    "https://images.pexels.com/photos/16823967/pexels-photo-16823967.jpeg", //horse
-    "https://images.pexels.com/photos/30678865/pexels-photo-30678865.jpeg", //goat
-]
+    "https://images.pexels.com/photos/32349608/pexels-photo-32349608.jpeg", //dog
+    "https://images.pexels.com/photos/33585484/pexels-photo-33585484.jpeg", //cat
+    "https://images.pexels.com/photos/13340057/pexels-photo-13340057.jpeg", //horse
+    "https://images.pexels.com/photos/32655850/pexels-photo-32655850.jpeg", //goat
+];
 
-let prev = document.getElementById("prev-btn");
-let next = document.getElementById("next-btn");
-let carousel_img = document.getElementById("carousel-img");
+const track = document.getElementById("carousel-track");
+const prevBtn = document.getElementById("prev-btn");
+const nextBtn = document.getElementById("next-btn");
 
 let currentIndex = 0;
 
-// Set initial image
-carousel_img.src = images[currentIndex];
-
-// NEXT BUTTON LOGIC
-next.addEventListener("click", () => {
-    // 1. Increment the index pointer by 1
-    currentIndex++;
-    
-    // 2. Loop check: If it goes past the last image (index 3), reset to the first image (0)
-    if (currentIndex >= images.length) {
-        currentIndex = 0;
-    }
-    
-    // 3. Update the source attribute on the screen
-    carousel_img.src = images[currentIndex];
+// 2. Dynamically inject your images into the filmstrip track
+images.forEach(url => {
+    const img = document.createElement("img");
+    img.src = url;
+    img.classList.add("carousel-slide");
+    track.appendChild(img);
 });
 
-// PREVIOUS BUTTON LOGIC
-prev.addEventListener("click", () => {
-    // 1. Decrement the index pointer by 1
-    currentIndex--;
-    
-    // 2. Loop check: If it goes below 0, jump straight to the last image index (3)
-    if (currentIndex < 0) {
-        currentIndex = images.length - 1;
+// 3. The sliding function
+function slideToImage() {
+    // Shifting by -100% per index moves the filmstrip smoothly to the left
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+
+// 4. Next button event
+nextBtn.addEventListener("click", () => {
+    currentIndex = currentIndex + 1;
+
+    if (currentIndex >= images.length) {
+        currentIndex = 0; // Reset to first
     }
-    
-    // 3. Update the source attribute on the screen
-    carousel_img.src = images[currentIndex];
+
+    slideToImage();
+});
+
+// 5. Previous button event
+prevBtn.addEventListener("click", () => {
+    currentIndex = currentIndex - 1;
+
+    if (currentIndex < 0) {
+        currentIndex = images.length - 1; // Loop back to last
+    }
+
+    slideToImage();
 });
